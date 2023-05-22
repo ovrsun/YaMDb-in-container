@@ -7,23 +7,12 @@ from rest_framework.viewsets import ModelViewSet
 from .permissions import (
     IsAuthorModeratorAdminOrReadOnlyPermission, IsAdminUserOrReadOnly,
     IsAdminOrReadOnlyPermission)
-
 from .serializers import (ReviewSerializer, CommentSerializer,
                           GenreSerializer, CategorySerializer,
                           TitleSerializerGet, TitleSerializerPost)
-
 from reviews.models import Title, Review, Category, Genre
-
 from .filters import TitleFilter
-
 from .mixins import ListPostDeleteViewSet
-
-from .permissions import (IsAdminOrReadOnlyPermission, IsAdminUserOrReadOnly,
-                          IsAuthorModeratorAdminOrReadOnlyPermission)
-
-from .serializers import (CategorySerializer, CommentSerializer,
-                          GenreSerializer, ReviewSerializer,
-                          TitleSerializerGet, TitleSerializerPost)
 
 
 class CategoryViewSet(ListPostDeleteViewSet):
