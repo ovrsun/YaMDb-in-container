@@ -10,12 +10,12 @@ services:
     image: postgres:13.0-alpine
     # volume и связанная с ним директория в контейнере
     volumes:
-      - /var/lib/postgresql/data/
+      - postgres_value:/var/lib/postgresql/data/
     # адрес файла, где хранятся переменные окружения
     env_file:
       - ./.env
   web:
-    build: ../api_yamdb/
+    build: ovrsun/api_yamdb:v1.2305
     restart: always
     volumes:
       # Контейнер web будет работать с данными, хранящиеся в томе static_value, 
@@ -60,3 +60,4 @@ volumes:
   # Новые тома 
   static_value:
   media_value:
+  postgres_value:
